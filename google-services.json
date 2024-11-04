@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "193904996359",
+    "firebase_url": "https://professores-em-default-rtdb.firebaseio.com",
+    "project_id": "professores-em",
+    "storage_bucket": "professores-em.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:193904996359:android:65cf1b95dea36c4df8baa2",
+        "android_client_info": {
+          "package_name": "com.mapaescolar.quantprof"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDA1wAWA_R115sHSp6VK15QeYEA61bznyc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

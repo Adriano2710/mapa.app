@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Registro de Professores - Escola {{ escola_id }}</title>
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h2 class="text-center">Registro de Professores - Escola {{ escola_id }}</h2>
+        <form method="POST" class="border p-4 rounded bg-white shadow-sm">
+            {% for disciplina in disciplinas %}
+                <div class="form-group">
+                    <label>{{ disciplina }}:</label>
+                    <input type="number" class="form-control" name="{{ disciplina }}" value="{{ professores.get(disciplina, {}).get('quantidade', '') }}" min="0">
+                </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-success btn-block">Salvar Informações</button>
+        </form>
+        <div class="text-center mt-4">
+            <a href="{{ url_for('home') }}" class="btn btn-secondary">Voltar</a>
+        </div>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="mt-3">
+                    <ul class="list-unstyled">
+                    {% for category, message in messages %}
+                        <li class="alert alert-danger">{{ message }}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+        {% endwith %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
